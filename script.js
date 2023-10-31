@@ -3,9 +3,8 @@ let correctAnswers = 0;
 const totalQuestions = 16;
 const currentQuestionSpan = document.getElementById("current-question");
 const totalQuestionsSpan = document.getElementById("total-questions");
-const guessedAnswers = []; // Track guessed answers
+const guessedAnswers = [];
 
-// Listen for Enter key press in the input field
 const answerInput = document.getElementById("answer");
 answerInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -64,7 +63,7 @@ function checkAnswer() {
 
   if (currentQuestion === totalQuestions) {
     document.getElementById("check-button").disabled = true;
-    result.textContent = `Quiz completed. You got ${correctAnswers} out of ${totalQuestions} correct.`;  // Update totalQuestions
+    result.textContent = `Quiz completed. You got ${correctAnswers} out of ${totalQuestions} correct.`;
   }
 
   currentQuestionSpan.textContent = currentQuestion;
