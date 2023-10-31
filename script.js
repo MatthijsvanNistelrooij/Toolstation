@@ -54,7 +54,7 @@ function checkAnswer() {
   answerInput.value = ""
 
   if (currentQuestion === totalQuestions) {
-    result.textContent = `Quiz completed. You got ${correctAnswers} out of ${totalQuestions} correct.` // Update totalQuestions
+    result.textContent = `Quiz completed!!!!`
   }
 
   currentQuestionSpan.textContent = currentQuestion
