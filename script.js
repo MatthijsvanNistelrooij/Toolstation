@@ -1,16 +1,17 @@
-let currentQuestion = 0;
-let correctAnswers = 0;
-const totalQuestions = 16;
-const currentQuestionSpan = document.getElementById("current-question");
-const totalQuestionsSpan = document.getElementById("total-questions");
-const guessedAnswers = [];
+let currentQuestion = 0
+let correctAnswers = 0
+const totalQuestions = 16 // Update this to 16
+const currentQuestionSpan = document.getElementById("current-question")
+const totalQuestionsSpan = document.getElementById("total-questions")
+const guessedAnswers = [] // Track guessed answers
 
-const answerInput = document.getElementById("answer");
+// Listen for Enter key press in the input field
+const answerInput = document.getElementById("answer")
 answerInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
-    checkAnswer();
+    checkAnswer()
   }
-});
+})
 
 const validAnswers = [
   "FESTOOL",
@@ -29,42 +30,41 @@ const validAnswers = [
   "VIEGA",
   "MILWAUKEE",
   "BOSCH",
-];
+]
 
-document.getElementById("check-button").addEventListener("click", checkAnswer);
+document.getElementById("check-button").addEventListener("click", checkAnswer)
 
 function checkAnswer() {
-  const answerInput = document.getElementById("answer");
-  const result = document.getElementById("result");
-  const userAnswer = answerInput.value.trim().toUpperCase();
+  const answerInput = document.getElementById("answer")
+  const result = document.getElementById("result")
+  const userAnswer = answerInput.value.trim().toUpperCase()
 
   if (validAnswers.includes(userAnswer)) {
     if (!guessedAnswers.includes(userAnswer)) {
-      guessedAnswers.push(userAnswer);
-      correctAnswers++;
-      result.textContent = "Correct!";
-      result.style.color = "green";
-      currentQuestion++;
+      guessedAnswers.push(userAnswer)
+      correctAnswers++
+      result.textContent = "Correct!"
+      result.style.color = "green"
+      currentQuestion++
 
-      const divToHide = document.getElementById(userAnswer);
+      const divToHide = document.getElementById(userAnswer)
       if (divToHide) {
-        divToHide.style.display = "none";
+        divToHide.style.display = "none"
       }
     } else {
-      result.textContent = "You've already guessed that answer.";
-      result.style.color = "red";
+      result.textContent = "You've already guessed that answer."
+      result.style.color = "red"
     }
   } else {
-    result.textContent = "Incorrect. Try again.";
-    result.style.color = "red";
+    result.textContent = "Incorrect. Try again."
+    result.style.color = "red"
   }
 
-  answerInput.value = "";
+  answerInput.value = ""
 
   if (currentQuestion === totalQuestions) {
-    document.getElementById("check-button").disabled = true;
-    result.textContent = `Quiz completed. You got ${correctAnswers} out of ${totalQuestions} correct.`;
+    result.textContent = `Quiz completed. You got ${correctAnswers} out of ${totalQuestions} correct.` // Update totalQuestions
   }
 
-  currentQuestionSpan.textContent = currentQuestion;
+  currentQuestionSpan.textContent = currentQuestion
 }
