@@ -6,10 +6,19 @@ body {
   margin: 0;
 }
 
-.quiz-container {
+.middle-container {
   text-align: center;
   padding: 20px;
   border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input {
+  align-items: center;
+}
+.quiz-container {
+  text-align: center;
+  padding: 20px;
   border-radius: 5px;
 }
 
