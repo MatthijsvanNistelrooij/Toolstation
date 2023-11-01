@@ -55,6 +55,15 @@ img {
   background-color: white;
 }
 
+#reset-button {
+  border: 5px solid rgb(42, 218, 42);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: white;
+}
+
+
 #FESTOOL {
   position: absolute;
   top: 367px;

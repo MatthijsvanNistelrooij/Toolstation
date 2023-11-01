@@ -36,11 +36,10 @@ giveUpButton.addEventListener("click", giveUp)
 
 function giveUp() {
   console.log("HERE")
-  guessedAnswers.length = 0 // Clear the guessedAnswers array
-  correctAnswers = 0 // Reset correctAnswers to 0
-  currentQuestion = 0 // Reset currentQuestion to 0
+  guessedAnswers.length = 0 
+  correctAnswers = 0 
+  currentQuestion = 0 
 
-  // Show all the hidden answer elements (if any)
   validAnswers.forEach((answer) => {
     const divToHide = document.getElementById(answer)
     if (divToHide) {
@@ -48,10 +47,16 @@ function giveUp() {
     }
   })
 
-  // Update the currentQuestionSpan, result, and answerInput elements
   currentQuestionSpan.textContent = currentQuestion
   result.textContent = ""
   answerInput.value = ""
+}
+
+const resetButton = document.getElementById("reset-button");
+resetButton.addEventListener("click", resetGame);
+
+function resetGame() {
+  location.reload();
 }
 
 document.getElementById("check-button").addEventListener("click", checkAnswer)
