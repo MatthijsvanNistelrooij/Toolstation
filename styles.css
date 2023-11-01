@@ -26,6 +26,7 @@ input[type="text"] {
   padding: 10px;
   margin: 10px;
   border: 5px solid rgb(42, 218, 42);
+  border-radius: 15px;
 }
 
 input[type="text"]:focus {
@@ -44,6 +45,14 @@ img {
 
 .image-container {
   position: relative;
+}
+
+#give-up-button {
+  border: 5px solid rgb(42, 218, 42);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
+  background-color: white;
 }
 
 #FESTOOL {

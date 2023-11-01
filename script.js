@@ -31,6 +31,29 @@ const validAnswers = [
   "BOSCH",
 ]
 
+const giveUpButton = document.getElementById("give-up-button")
+giveUpButton.addEventListener("click", giveUp)
+
+function giveUp() {
+  console.log("HERE")
+  guessedAnswers.length = 0 // Clear the guessedAnswers array
+  correctAnswers = 0 // Reset correctAnswers to 0
+  currentQuestion = 0 // Reset currentQuestion to 0
+
+  // Show all the hidden answer elements (if any)
+  validAnswers.forEach((answer) => {
+    const divToHide = document.getElementById(answer)
+    if (divToHide) {
+      divToHide.style.display = "none"
+    }
+  })
+
+  // Update the currentQuestionSpan, result, and answerInput elements
+  currentQuestionSpan.textContent = currentQuestion
+  result.textContent = ""
+  answerInput.value = ""
+}
+
 document.getElementById("check-button").addEventListener("click", checkAnswer)
 
 function checkAnswer() {
@@ -67,4 +90,3 @@ function checkAnswer() {
 
   currentQuestionSpan.textContent = currentQuestion
 }
-
