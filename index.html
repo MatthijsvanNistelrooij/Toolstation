@@ -16,15 +16,18 @@
             <p class="question-counter">
             <div class="question">
                 <span class="input">
-                    <input type="text" id="answer" placeholder="Type your answer" />
                 </span>
-                <button id="give-up-button">Give up</button>
-                <button id="reset-button">Reset</button>
-
-            </div>
-            <span id="current-question">0</span> /
-            <span id="total-questions">16</span>
-            <span>guessed</span>
+                <div class="grid-container">
+                    <div class="grid-item">                    
+                        <input type="text" id="answer" placeholder="Type your answer" />
+                        <button id="give-up-button">Give up</button>
+                        <button id="reset-button">Reset</button>
+                            <span id="current-question">0</span> /
+                            <span id="total-questions">16</span>
+                            <span>guessed</span></div>
+                        </div> 
+                    </div>
+      
             </p>
             <div class="image-container">
                 <div id="FESTOOL"></div>
@@ -44,10 +47,10 @@
                 <div id="MILWAUKEE"></div>
                 <div id="BOSCH"></div>
                 <img src="images/toolstation.png" alt="Image" />
+                <p id="result"></p>
+
             </div>
         </div>
-        <p id="result"></p>
-
     </div>
     <script src="script.js"></script>
 </body>

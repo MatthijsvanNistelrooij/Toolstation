@@ -65,6 +65,14 @@ img {
   cursor: pointer;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+.grid-item {
+  text-align: right;
+}
+
 #FESTOOL {
   position: absolute;
   top: 367px;
