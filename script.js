@@ -35,6 +35,7 @@ const validAnswers = [
   "VIEGA",
   "MILWAUKEE",
   "BOSCH",
+  "BRUYNZEEL",
 ]
 
 const giveUpButton = document.getElementById("give-up-button")
