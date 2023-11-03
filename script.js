@@ -58,8 +58,6 @@ function giveUp() {
   answerInput.value = ""
 
   clearInterval(interval)
-  timerDisplay.textContent = "Time's up!"
-
   answerInput.disabled = true
 
   document.getElementById("check-button").disabled = true
@@ -91,6 +89,9 @@ function checkAnswer() {
         divToHide.style.display = "none"
       }
 
+      const coinSound = document.getElementById("coinSound")
+      coinSound.play()
+
       if (currentQuestion === totalQuestions) {
         if (correctAnswers === totalQuestions) {
           clearInterval(interval)
@@ -116,7 +117,6 @@ function updateCountdown() {
   }
 }
 function startTimer() {
-  console.log("hallo")
   countdownValue = 59
   clearInterval(interval)
   interval = setInterval(updateCountdown, 1000)
