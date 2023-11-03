@@ -1,6 +1,6 @@
 let currentQuestion = 0
 let correctAnswers = 0
-const totalQuestions = 16
+const totalQuestions = 17
 const currentQuestionSpan = document.getElementById("current-question")
 const totalQuestionsSpan = document.getElementById("total-questions")
 const guessedAnswers = []
