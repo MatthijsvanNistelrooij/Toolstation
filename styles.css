@@ -12,8 +12,8 @@ body {
 }
 
 .input-container {
-  border-top: 30px solid #fee200;
-  border-bottom: 30px solid #fee200;
+  border-top: 60px solid #fee200;
+  border-bottom: 60px solid #fee200;
   max-height: 40px;
   margin-bottom: 10px;
   border-radius: 10px;
