@@ -4,18 +4,30 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  background-color: rgb(2, 2, 133, 0.8);
+}
+
+.backdrop {
+  border-radius: 15px;
+}
+
+.input-container {
+  border-top: 30px solid #fee200;
+  border-bottom: 30px solid #fee200;
+  max-height: 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 .middle-container {
   text-align: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
 }
 
 .input {
   align-items: center;
 }
+
 .quiz-container {
   text-align: center;
   padding: 20px;
@@ -25,14 +37,14 @@ body {
 input[type="text"] {
   padding: 10px;
   margin: 10px;
-  border: 5px solid rgb(42, 218, 42);
+  border: 5px solid rgb(2, 2, 133, 0.8);
   border-radius: 15px;
 }
 
 input[type="text"]:focus {
   padding: 10px;
   margin: 10px;
-  border: 5px solid rgb(42, 218, 42);
+  border: 5px solid rgb(2, 2, 133, 0.8);
 }
 
 img {
@@ -41,6 +53,7 @@ img {
 
 #result {
   font-weight: bold;
+  margin-top: 25px;
 }
 
 .image-container {
@@ -48,29 +61,108 @@ img {
 }
 
 #give-up-button {
-  border: 5px solid rgb(42, 218, 42);
-  padding: 10px;
-  margin: 10px;
-  border-radius: 15px;
+  border: 8px solid rgb(2, 2, 133, 0.8);
+  border-radius: 50px;
+  height: 60px;
+  width: 100px;
+  color: red;
   background-color: white;
+  margin-top: -20px;
   cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sometype Mono", monospace;
+  font-weight: bold;
 }
 
 #reset-button {
-  border: 5px solid rgb(42, 218, 42);
-  padding: 10px;
+  border: 8px solid rgb(2, 2, 133, 0.8);
   margin: 10px;
-  border-radius: 15px;
+  height: 60px;
+  color: green;
+  border-radius: 50px;
+  width: 100px;
+  margin-top: -20px;
   background-color: white;
   cursor: pointer;
+  margin-right: 150px;
+  font-family: "Lato", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sometype Mono", monospace;
+  font-weight: bold;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
+#guessed {
+  border: 8px solid rgb(2, 2, 133, 0.8);
+  height: 60px;
+  color: green;
+  border-radius: 50px;
+  width: 180px;
+  margin-top: -50px;
+  margin-right: 150px;
+  background-color: white;
+  font-family: "Lato", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sometype Mono", monospace;
+  font-weight: bold;
 }
-.grid-item {
-  text-align: right;
+
+#answer {
+  border: 8px solid rgb(2, 2, 133, 0.8);
+  border-radius: 50px;
+  margin-top: -10px;
+  height: 25px;
+  width: 200px;
+  background-color: white;
+  font-family: "Lato", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sometype Mono", monospace;
+}
+
+#timer {
+  margin-top: 25px;
+  font-weight: 100;
+  border: 8px solid rgb(2, 2, 133, 0.8);
+  margin: 10px;
+  height: 60px;
+  color: green;
+  border-radius: 50px;
+  width: 100px;
+  margin-top: -20px;
+  background-color: white;
+  font-family: "Lato", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sometype Mono", monospace;
+  font-weight: bold;
+}
+
+#overlay-text {
+  margin-top: 45vh;
+  font-size: 5em;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Sometype Mono", monospace;
+  color: white;
+  z-index: 1;
+}
+
+#overlay {
+  position: absolute;
+  background: #000;
+  opacity: 0.6;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
 }
 
 #FESTOOL {

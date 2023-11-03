@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.25, user-scalable=yes">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito+Sans:ital,opsz,wght@1,6..12,200&family=Roboto&family=Sometype+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.25, user-scalable=yes"
+    />
     <title>Toolstation Quiz</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="quiz-container">
-        <h1>Toolstation Quiz</h1>
-
-        <div class="middle-container">
-            <p class="question-counter">
-            <div class="question">
-                <span class="input">
-                </span>
-                <div class="grid-container">
-                    <div class="grid-item">                    
-                        <input type="text" id="answer" placeholder="Type your answer" />
-                        <button id="give-up-button">Give up</button>
-                        <button id="reset-button">Reset</button>
-                            <span id="current-question">0</span> /
-                            <span id="total-questions">16</span>
-                            <span>guessed</span></div>
-                        </div> 
-                    </div>
-      
-            </p>
-            <div class="image-container">
-                <div id="FESTOOL"></div>
-                <div id="UPONOR"></div>
-                <div id="ABB"></div>
-                <div id="THREEM"></div>
-                <div id="MAKITA"></div>
-                <div id="HENCO"></div>
-                <div id="ATTEMA"></div>
-                <div id="DEWALT"></div>
-                <div id="SPAX"></div>
-                <div id="NEMEF"></div>
-                <div id="ILLBRUCK"></div>
-                <div id="STANLEY"></div>
-                <div id="JUNG"></div>
-                <div id="VIEGA"></div>
-                <div id="MILWAUKEE"></div>
-                <div id="BOSCH"></div>
-                <img src="images/toolstation.png" alt="Image" />
-                <p id="result"></p>
-
-            </div>
+      <div class="middle-container">
+        <div class="input-container">
+          <input
+            type="text"
+            id="answer"
+            placeholder="Start typing your answer"
+          />
+          <button id="guessed">
+            <span id="current-question">0</span>
+            /
+            <span id="total-questions">16</span>
+            <span>guessed</span>
+          </button>
+          <button id="give-up-button">GIVE UP</button>
+          <button id="reset-button">RESET</button>
+          <button id="timer">60</button>
         </div>
+        <div class="image-container">
+          <div id="FESTOOL"></div>
+          <div id="UPONOR"></div>
+          <div id="ABB"></div>
+          <div id="THREEM"></div>
+          <div id="MAKITA"></div>
+          <div id="HENCO"></div>
+          <div id="ATTEMA"></div>
+          <div id="DEWALT"></div>
+          <div id="SPAX"></div>
+          <div id="NEMEF"></div>
+          <div id="ILLBRUCK"></div>
+          <div id="STANLEY"></div>
+          <div id="JUNG"></div>
+          <div id="VIEGA"></div>
+          <div id="MILWAUKEE"></div>
+          <div id="BOSCH"></div>
+          <img src="images/toolstation.png" alt="Image" class="backdrop" />
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

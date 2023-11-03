@@ -6,9 +6,15 @@ const totalQuestionsSpan = document.getElementById("total-questions")
 const guessedAnswers = []
 
 const answerInput = document.getElementById("answer")
+let timerStarted = false
+
 answerInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     checkAnswer()
+    if (!timerStarted) {
+      startTimer()
+      timerStarted = true
+    }
   }
 })
 
@@ -49,7 +55,17 @@ function giveUp() {
   })
 
   currentQuestionSpan.textContent = currentQuestion
-  result.textContent = ""
+  answerInput.value = ""
+
+  clearInterval(interval)
+  timerDisplay.textContent = "Time's up!"
+
+  answerInput.disabled = true
+
+  document.getElementById("check-button").disabled = true
+
+  answerInput.removeEventListener("keydown", checkAnswer)
+
   answerInput.value = ""
 }
 
@@ -60,39 +76,48 @@ function resetGame() {
   location.reload()
 }
 
-document.getElementById("check-button").addEventListener("click", checkAnswer)
-
 function checkAnswer() {
   const answerInput = document.getElementById("answer")
-  const result = document.getElementById("result")
   const userAnswer = answerInput.value.trim().toUpperCase()
 
   if (validAnswers.includes(userAnswer)) {
     if (!guessedAnswers.includes(userAnswer)) {
       guessedAnswers.push(userAnswer)
       correctAnswers++
-      result.textContent = "Correct!"
-      result.style.color = "green"
       currentQuestion++
 
       const divToHide = document.getElementById(userAnswer)
       if (divToHide) {
         divToHide.style.display = "none"
       }
-    } else {
-      result.textContent = "You've already guessed that answer."
-      result.style.color = "red"
+
+      if (currentQuestion === totalQuestions) {
+        if (correctAnswers === totalQuestions) {
+          clearInterval(interval)
+        }
+      }
     }
-  } else {
-    result.textContent = "Incorrect. Try again."
-    result.style.color = "red"
   }
 
   answerInput.value = ""
-
-  if (currentQuestion === totalQuestions) {
-    result.textContent = `Quiz completed!!!!`
-  }
-
   currentQuestionSpan.textContent = currentQuestion
+}
+
+let countdownValue = 59
+const countdownElement = document.getElementById("timer")
+let interval
+
+function updateCountdown() {
+  countdownElement.textContent = countdownValue
+  countdownValue--
+
+  if (countdownValue < 0) {
+    clearInterval(interval)
+  }
+}
+function startTimer() {
+  console.log("hallo")
+  countdownValue = 59
+  clearInterval(interval)
+  interval = setInterval(updateCountdown, 1000)
 }
