@@ -45,6 +45,8 @@ function giveUp() {
   showGameOver("Game Over!")
   const gameOverSound = document.getElementById("gameOverSound")
   gameOverSound.play()
+  const giveUpButton = document.getElementById("give-up-button")
+  giveUpButton.disabled = true
   guessedAnswers.length = 0
   correctAnswers = 0
   currentQuestion = 0
@@ -105,6 +107,9 @@ function checkAnswer() {
     victorySound.play()
     answerInput.disabled = true
     clearInterval(interval)
+
+    const giveUpButton = document.getElementById("give-up-button")
+    giveUpButton.disabled = true
   }
 }
 
@@ -124,6 +129,8 @@ function updateCountdown() {
     gameOverSound.play()
     answerInput.disabled = true
     clearInterval(interval)
+    const giveUpButton = document.getElementById("give-up-button")
+    giveUpButton.disabled = true
   }
 }
 
