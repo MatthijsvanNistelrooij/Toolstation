@@ -7,6 +7,10 @@ body {
   background-color: rgb(2, 2, 133, 0.8);
 }
 
+*:focus {
+  outline: none;
+}
+
 .backdrop {
   border-radius: 15px;
 }
