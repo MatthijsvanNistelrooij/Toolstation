@@ -42,7 +42,9 @@ giveUpButton.addEventListener("click", giveUp)
 
 function giveUp() {
   answerInput.disabled = true
-
+  showGameOver("Game Over!")
+  const gameOverSound = document.getElementById("gameOverSound")
+  gameOverSound.play()
   guessedAnswers.length = 0
   correctAnswers = 0
   currentQuestion = 0
