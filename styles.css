@@ -11,6 +11,10 @@ body {
   border-radius: 15px;
 }
 
+.toolstation-image {
+  border-radius: 15px;
+}
+
 .input-container {
   border-top: 60px solid #fee200;
   border-bottom: 60px solid #fee200;
@@ -161,6 +165,7 @@ img {
   bottom: 0;
   z-index: 1;
   display: none;
+  border-radius: 15px;
 }
 
 #FESTOOL {
