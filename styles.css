@@ -140,7 +140,7 @@ img {
 }
 
 #overlay-text {
-  margin-top: 45vh;
+  margin-top: 30vh;
   font-size: 5em;
   cursor: pointer;
   font-family: "Lato", sans-serif;
@@ -288,14 +288,6 @@ img {
   top: 585px;
   left: 700px;
   width: 80px;
-  height: 35px;
-  background-color: rgb(183, 183, 183);
-}
-#BRUYNZEEL {
-  position: absolute;
-  top: 585px;
-  left: 880px;
-  width: 26px;
   height: 35px;
   background-color: rgb(183, 183, 183);
 }

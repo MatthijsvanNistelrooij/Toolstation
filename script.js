@@ -1,6 +1,6 @@
 let currentQuestion = 0
 let correctAnswers = 0
-const totalQuestions = 17
+const totalQuestions = 16
 const currentQuestionSpan = document.getElementById("current-question")
 const totalQuestionsSpan = document.getElementById("total-questions")
 const guessedAnswers = []
@@ -92,21 +92,25 @@ function checkAnswer() {
 
       const coinSound = document.getElementById("coinSound")
       coinSound.play()
-
-      if (currentQuestion === totalQuestions) {
-        if (correctAnswers === totalQuestions) {
-          clearInterval(interval)
-        }
-      }
     }
   }
 
   answerInput.value = ""
   currentQuestionSpan.textContent = currentQuestion
+
+  if (correctAnswers === totalQuestions) {
+    showGameOver("You Won!")
+    const victorySound = document.getElementById("victorySound")
+    victorySound.play()
+    answerInput.disabled = true
+    clearInterval(interval)
+  }
 }
 
 let countdownValue = 59
 const countdownElement = document.getElementById("timer")
+const overlay = document.getElementById("overlay")
+const overlayText = document.getElementById("overlay-text")
 let interval
 
 function updateCountdown() {
@@ -114,10 +118,26 @@ function updateCountdown() {
   countdownValue--
 
   if (countdownValue < 0) {
+    showGameOver("Game Over!")
+    const gameOverSound = document.getElementById("gameOverSound")
+    gameOverSound.play()
+    answerInput.disabled = true
     clearInterval(interval)
   }
 }
+
+function clearOverlay() {
+  overlay.style.display = "none"
+}
+
+function showGameOver(message) {
+  overlay.style.display = "block"
+  overlayText.textContent = message
+  clearInterval(interval)
+}
+
 function startTimer() {
+  clearOverlay()
   countdownValue = 59
   clearInterval(interval)
   interval = setInterval(updateCountdown, 1000)
